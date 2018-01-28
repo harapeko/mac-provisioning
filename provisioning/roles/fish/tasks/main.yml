@@ -1,4 +1,9 @@
 ---
+- name: Current shell
+  shell: echo $SHELL
+  register: current_shell
+  changed_when: false
+
 - name: Login shell fish
   shell: chsh -s /usr/local/bin/fish
   become: yes
