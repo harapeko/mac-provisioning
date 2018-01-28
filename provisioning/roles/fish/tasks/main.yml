@@ -1,0 +1,23 @@
+---
+- name: Login shell fish
+  shell: chsh -s /usr/local/bin/fish
+  become: yes
+  when: current_shell.stdout != '/usr/local/bin/fish'
+
+- name: Create ~/.config/fish/functions for install fisherman
+  file:
+    path: ~/.config/fish/functions
+    state: directory
+
+- name: Install fisherman
+  get_url:
+    url: https://git.io/fisher
+    dest: ~/.config/fish/functions/fisher.fish
+
+- name: Install theme(bobthefish) by fisherman
+  shell: fish -lc "fisher omf/theme-bobthefish"
+  args:
+    creates: ~/.config/fisherman/default
+
+- name: Install plugins by fisherman
+  shell: fish -lc "fisher fnm z fzf bd ghq"
