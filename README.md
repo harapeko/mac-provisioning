@@ -5,8 +5,8 @@
 1. AppStore ID & PASSWORD setting for mas-cli.
 
 ```bash
-$ cp host_vars/localhost.example host_vars/localhost
-$ vi host_vars/localhost
+$ cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
+$ vi provisioning/host_vars/localhost
 ```
 
 2. Execute
