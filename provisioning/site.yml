@@ -2,23 +2,23 @@
 - name: Mac Provisioning
   hosts: local
   become: no
-  # pre_tasks:
-  #   - stat: path=~/.ssh
-  #     register: ssh
+  pre_tasks:
+    - stat: path=~/.ssh
+      register: ssh
   roles:
     # App Install
     - homebrew
     - homebrew-cask
     - mas
 
-    # Configurations
+    Configurations
     - osx-defaults
     - git
 
 
 
-    # Other
-    # - {
-    #   role: ssh,
-    #   when: not ssh.stat.exists
-    # }
+    # SSH
+    - {
+      role: SSH,
+      when: not ssh.stat.exists
+    }
