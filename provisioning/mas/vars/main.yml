@@ -1,0 +1,10 @@
+mas_applications:
+  - { name: 'EdgeView 2',               id: 1206246482}
+  - { name: 'GPX Binder',               id: 661532686}
+  - { name: 'Growl',                    id: 467939042}
+  - { name: 'JPEGmini',                 id: 498944723}
+  - { name: 'Kobito',                   id: 896624060}
+  - { name: 'LanScan',                  id: 472226235}
+  - { name: 'LastPass',                 id: 926036361}
+  - { name: 'Microsoft Remote Desktop', id: 715768417}
+  - { name: 'The Unarchiver',           id: 425424353}

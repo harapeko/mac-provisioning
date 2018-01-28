@@ -1,0 +1,18 @@
+---
+- name: Ensure MAS is installed.
+  homebrew: name=mas state=present
+
+- name: Ensure logout mas
+  shell: mas signout
+
+- name: login mas
+  shell: mas signin --dialog "{{ apple_id }}"
+  ignore_errors: yes
+
+- name: install AppStore applications
+  shell: mas install "{{ item.id }}"
+  with_items: "{{ mas_applications }}"
+  run_once: true
+
+- name: upgrade applications
+  shell: mas upgrade
