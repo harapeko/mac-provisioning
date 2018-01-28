@@ -1,5 +1,10 @@
 # Setup Mac
 
+## Prepare
+1. Connect internet
+1. Setting iCloud
+1. Update OSX
+
 ## Usage
 
 1. Apple ID for mas-cli.
