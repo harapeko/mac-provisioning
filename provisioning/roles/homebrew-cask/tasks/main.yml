@@ -15,6 +15,9 @@
   homebrew_cask:
     name: "{{ item }}"
     state: present
+  # GUIのインストール場所を/Applicationsにする
+  environment:
+    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
   with_items: "{{ homebrew_cask_packages }}"
   when: homebrew_cask_packages
   become: false
