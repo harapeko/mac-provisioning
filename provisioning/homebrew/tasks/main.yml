@@ -1,0 +1,11 @@
+---
+- name: update homebrew itself first
+  homebrew:
+    state: latest
+    update_homebrew: yes
+
+- name: Install homebrew applications
+  homebrew:
+    name: "{{item}}"
+    state: latest
+  with_items: "{{homebrew_packages}}"

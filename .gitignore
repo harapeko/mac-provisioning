@@ -1,5 +1,8 @@
 
-# Created by https://www.gitignore.io/api/macos
+# Created by https://www.gitignore.io/api/macos,ansible
+
+### Ansible ###
+*.retry
 
 ### macOS ###
 *.DS_Store
@@ -29,6 +32,4 @@ Temporary Items
 .apdisk
 
 
-# End of https://www.gitignore.io/api/macos
-
-*.swp
+# End of https://www.gitignore.io/api/macos,ansible

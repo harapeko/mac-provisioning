@@ -13,5 +13,5 @@ setup:
 
 .PHONY: provisioning
 provisioning:
-	# @$(SCRIPT_DIR)/AnsiblePlay.sh
+	@$(SCRIPT_DIR)/AnsiblePlay.sh
 	@$(SCRIPT_DIR)/NotifyFinished.sh

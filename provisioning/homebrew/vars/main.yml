@@ -1,0 +1,13 @@
+homebrew_packages:
+  - fish
+  - ghq
+  - git
+  - go
+  - heroku
+  - httpie
+  - hugo
+  - mas
+  - sqlite
+  - tree
+  - wget
+  - yarn
