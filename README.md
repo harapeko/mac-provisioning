@@ -2,7 +2,7 @@
 
 ## Usage
 
-1. AppStore ID & PASSWORD setting for mas-cli.
+1. Apple ID for mas-cli.
 
 ```bash
 $ cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
@@ -16,10 +16,10 @@ $ make
 ```
 
 ## Manual
-### スクリーンセイバー
-- [Nyan Cat Screen Saver for Mac OS X](http://nyancatsaves.com/)
+### Screen Saver
+- <a href="http://nyancatsaves.com/" target="_blank">Nyan Cat Screen Saver for Mac OS X</a>
 
-### トラックパッド設定
-- [ポイントとクリック](manual/osx-defaults01.png)
-- [スクロールとズーム](manual/osx-defaults02.png)
-- [その他のジェスチャ](manual/osx-defaults03.png)
+### Track Pad Configuration
+- [ポイントとクリック](./manual/osx-defaults/01.png)
+- [スクロールとズーム](./manual/osx-defaults/02.png)
+- [その他のジェスチャ](./manual/osx-defaults/03.png)
