@@ -1,8 +1,0 @@
----
-# NOTE: ~/.ssh/config0に作成する。~/.ssh/configを上書きしてしまうと取り返し付かないため。
-- name: Create ~/.ssh/config0
-  file:
-    src: "{{ ansible_user_dir }}/ssh"
-    dest: ~/.ssh
-    state: link
-    force: True
