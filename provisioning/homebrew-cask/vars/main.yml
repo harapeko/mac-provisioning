@@ -37,6 +37,7 @@ homebrew_cask_packages:
   - google-japanese-ime
   - gyazo
   - ios-console
+  - microsoft-office
   - shiftit
   - wireshark
 
