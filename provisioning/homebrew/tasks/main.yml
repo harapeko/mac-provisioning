@@ -7,8 +7,8 @@
 
 - name: Install homebrew packages
   homebrew:
-    name: "{{item}}"
+    name: "{{ item }}"
     state: latest
-  with_items: "{{homebrew_packages}}"
+  with_items: "{{ homebrew_packages }}"
   when: homebrew_packages
   become: false
