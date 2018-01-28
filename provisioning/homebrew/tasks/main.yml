@@ -1,5 +1,5 @@
 ---
-- name: update homebrew itself first
+- name: Update homebrew itself first
   homebrew:
     state: latest
     update_homebrew: yes

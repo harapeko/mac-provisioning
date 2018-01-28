@@ -5,14 +5,14 @@
 - name: Ensure logout mas
   shell: mas signout
 
-- name: login mas
+- name: Login mas
   shell: mas signin --dialog "{{ apple_id }}"
   ignore_errors: yes
 
-- name: install AppStore applications
+- name: Install AppStore applications
   shell: mas install "{{ item.id }}"
   with_items: "{{ mas_applications }}"
   run_once: true
 
-- name: upgrade applications
+- name: Upgrade applications
   shell: mas upgrade
