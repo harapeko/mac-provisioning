@@ -1,0 +1,46 @@
+homebrew_cask_packages:
+  # Browsers
+  - firefox
+  - google-chrome
+
+  # Develop
+  - adobe-creative-cloud
+  - android-studio
+  - atom
+  - boostnote
+  - dash
+  - filezilla
+  - iterm2
+  - postico
+  - sequel-pro
+  - sketch
+  - skitch
+  - sublime-text
+  - vagrant
+  - virtualbox
+  - visual-studio-code
+
+  # Media
+  - kindle
+  - spotify
+  - vlc
+
+  # Tool
+  - alfred
+  - appcleaner
+  - docker
+  - docker-toolbox
+  - dropbox
+  - flux
+  - franz
+  - google-backup-and-sync
+  - google-japanese-ime
+  - gyazo
+  - ios-console
+  - shiftit
+  - wireshark
+
+# Quicklook
+  - qlimagesize
+  - quicklook-csv
+  - quicklook-json

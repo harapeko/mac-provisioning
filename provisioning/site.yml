@@ -8,6 +8,7 @@
   roles:
     # App Install
     - homebrew
+    - homebrew-cask
 
 
 
