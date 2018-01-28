@@ -1,0 +1,206 @@
+# SEE: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html
+
+osx_settings:
+  # Finder
+  ## ファイルの拡張子を表示する
+  - {
+    domain: NSGlobalDomain,
+    key: AppleShowAllExtensions,
+    type: bool,
+    value: true,
+  }
+  ## 不可視ファイルを表示する
+  - {
+    domain: com.apple.finder,
+    key: AppleShowAllFiles,
+    type: bool,
+    value: true,
+  }
+  ## フォルダを開くときのアニメーションを無効にする
+  - {
+    domain: com.apple.finder,
+    key: AnimateWindowZoom,
+    type: bool,
+    value: false,
+  }
+  ## Finderのアニメーション効果を全て無効にする
+  - {
+    domain: com.apple.finder,
+    key: DisableAllAnimations,
+    type: bool,
+    value: true,
+  }
+  ## タイトルバーにフルパスを表示する
+  - {
+    domain: com.apple.finder,
+    key: _FXShowPosixPathInTitle,
+    type: bool,
+    value: true,
+  }
+  ## パスバーを表示する
+  - {
+    domain: com.apple.finder,
+    key: ShowPathbar,
+    type: bool,
+    value: true,
+  }
+
+
+  # Dock
+  ## 左配置
+  - {
+    domain: com.apple.dock,
+    key: orientation,
+    type: string,
+    value: left,
+  }
+  ## アイコンズームON
+  - {
+    domain: com.apple.dock,
+    key: magnification,
+    type: bool,
+    value: true,
+  }
+  ## ズームエフェクト
+  - {
+    domain: com.apple.dock,
+    key: mineffect,
+    type: string,
+    value: scale,
+  }
+  ## Dockを自動的に隠す
+  - {
+    domain: com.apple.dock,
+    key: autohide,
+    type: bool,
+    value: true,
+  }
+  ## Dockを隠すときの時間を0にする
+  - {
+    domain: com.apple.dock,
+    key: autohide-delay,
+    type: float,
+    value: 0,
+  }
+  ## Dockを隠すときのアニメーションを設定する
+  - {
+    domain: com.apple.dock,
+    key: autohide-time-modifier,
+    type: float,
+    value: 0.25,
+  }
+  ## アイコン最大サイズ
+  - {
+    domain: com.apple.dock,
+    key: largesize,
+    type: int,
+    value: 60,
+  }
+  ## タイトルサイズ変更する
+  - {
+    domain: com.apple.dock,
+    key: tilesize,
+    type: float,
+    value: 45,
+  }
+
+
+  # ホットコーナー
+  ## 右下：デスクトップ表示する
+  - {
+    domain: com.apple.dock,
+    key: wvous-br-corner,
+    type: int,
+    value: 4,
+  }
+  - {
+    domain: com.apple.dock,
+    key: wvous-br-modifier,
+    type: int,
+    value: 0,
+  }
+  ## 左下：画面をロックする
+  - {
+    domain: com.apple.dock,
+    key: wvous-bl-corner,
+    type: int,
+    value: 5,
+  }
+  - {
+    domain: com.apple.dock,
+    key: wvous-bl-modifier,
+    type: int,
+    value: 0,
+  }
+
+
+  # Key
+  ## Fnを標準のファンクションキーとして使用
+  - {
+    domain: 'Apple Global Domain',
+    key: com.apple.keyboard.fnState,
+    type: bool,
+    value: true,
+  }
+  ## KeyRepeatが始まるまでのディレイ
+  - {
+    domain: 'NSGlobalDomain',
+    key: InitialKeyRepeat,
+    type: int,
+    value: 11,
+  }
+  ## KeyRepeat中のディレイ
+  - {
+    domain: 'NSGlobalDomain',
+    key: KeyRepeat,
+    type: int,
+    value: 3,
+  }
+
+
+  # TrackPad
+  ## トラックパッドを速くする
+  - {
+    domain: 'com.apple.trackpad',
+    key: scaling,
+    type: float,
+    value: 2.5,
+  }
+  ## ナチュラル スクローリングを無効にする
+  - {
+    domain: 'NSGlobalDomain',
+    key: com.apple.swipescrolldirection,
+    type: bool,
+    value: false,
+  }
+
+
+  # Other
+  ## iPhoneを接続時に「写真」を自動起動させない
+  - {
+    domain: com.apple.ImageCapture,
+    key: disableHotPlug,
+    type: bool,
+    value: false,
+  }
+  ## バッテリー残量を%表示にする
+  - {
+    domain: 'com.apple.menuextra.battery',
+    key: ShowPercent,
+    type: string,
+    value: 'YES',
+  }
+  ## スクリーンショットの保存先を変更する
+  - {
+      domain: com.apple.screencapture,
+      key: location,
+      type: string,
+      value: '~/Documents/ScreenShots/',
+  }
+  ## スクリーンキャプチャでの影をオフにする
+  - {
+      domain: com.apple.screencapture,
+      key: disable-shadow,
+      type: bool,
+      value: true,
+  }

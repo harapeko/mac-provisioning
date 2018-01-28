@@ -11,6 +11,9 @@
     - homebrew-cask
     - mas
 
+    # Configurations
+    - osx-defaults
+
 
 
     # Other

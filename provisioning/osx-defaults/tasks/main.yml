@@ -1,0 +1,16 @@
+---
+- name: Create a directory to save ScreenShots
+  file:
+    path: ~/Documents/ScreenShots
+    state: directory
+
+- name: Setting OSX defaults
+  osx_defaults:
+    domain: "{{ item.domain }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    array_add: "{{ item.array_add | default('false') }}"
+  with_items: "{{ osx_settings }}"
+  notify: Apply setting
+  changed_when: true

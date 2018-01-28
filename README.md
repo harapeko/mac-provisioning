@@ -14,3 +14,12 @@ $ vi host_vars/localhost
 ```bash
 $ make
 ```
+
+## Manual
+### スクリーンセイバー
+- [Nyan Cat Screen Saver for Mac OS X](http://nyancatsaves.com/)
+
+### トラックパッド設定
+- [ポイントとクリック](manual/osx-defaults01.png)
+- [スクロールとズーム](manual/osx-defaults02.png)
+- [その他のジェスチャ](manual/osx-defaults03.png)

@@ -1,0 +1,6 @@
+---
+- name: Apply setting 
+  shell: >
+    killall SystemUIServer;
+    killall Dock;
+    killall Finder;
