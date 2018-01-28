@@ -3,9 +3,12 @@
   homebrew:
     state: latest
     update_homebrew: yes
+  become: false
 
-- name: Install homebrew applications
+- name: Install homebrew packages
   homebrew:
     name: "{{item}}"
     state: latest
   with_items: "{{homebrew_packages}}"
+  when: homebrew_packages
+  become: false
