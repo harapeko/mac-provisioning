@@ -34,4 +34,4 @@ Temporary Items
 
 # End of https://www.gitignore.io/api/macos,ansible
 
-host_vars/localhost
+provisioning/host_vars/localhost
