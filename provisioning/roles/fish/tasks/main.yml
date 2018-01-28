@@ -6,8 +6,7 @@
 
 - name: Login shell fish
   shell: chsh -s /usr/local/bin/fish
-  become: yes
-  when: current_shell.stdout != '/usr/local/bin/fish'
+  when: current_shell != '/usr/local/bin/fish'
 
 - name: Create ~/.config/fish/functions for install fisherman
   file:
