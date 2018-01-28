@@ -1,5 +1,6 @@
 homebrew_packages:
   - fish
+  - fzf
   - ghq
   - git
   - go
