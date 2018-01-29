@@ -1,4 +1,10 @@
 ---
+- name: Ensure change shell for fish
+  lineinfile:
+    dest: /etc/shells
+    line: /usr/local/bin/fish
+  become: yes
+
 - name: Current shell
   shell: echo $SHELL
   register: current_shell
