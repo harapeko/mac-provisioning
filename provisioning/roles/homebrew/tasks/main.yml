@@ -1,9 +1,29 @@
 ---
+# Install Phase
 - name: Update homebrew itself first
   homebrew:
     state: latest
     update_homebrew: yes
+  ignore_errors: True
+  register: update_result
   become: false
+
+- name: Get brew installer
+  get_url:
+    url: https://raw.githubusercontent.com/Homebrew/install/master/install
+    dest: /tmp/brew_install
+  when: update_result|failed
+
+- name: Install Homebrew
+  shell: ruby /tmp/brew_install
+  when: update_result|failed
+
+# Install packages
+- name: update homebrew
+  homebrew:
+    state: latest
+    update_homebrew: yes
+  become: False
 
 - name: Install homebrew packages
   homebrew:
