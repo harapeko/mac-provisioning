@@ -9,7 +9,7 @@ all: setup provisioning
 setup:
 	@$(SCRIPT_DIR)/XcodeInstall.sh
 	@$(SCRIPT_DIR)/AnsibleInstall.sh
-	@$(SCRIPT_DIR)/AnsibleUpdate.sh
+	@$(SCRIPT_DIR)/PipUpdate.sh
 
 .PHONY: provisioning
 provisioning:
