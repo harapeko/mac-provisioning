@@ -1,9 +1,7 @@
 ---
-- name: Ensure change shell for fish
-  lineinfile:
-    dest: /etc/shells
-    line: /usr/local/bin/fish
-    state: present
+- name: Ensure candiate shell for fish
+  shell: sh -c "echo '/usr/local/bin/fish' >> /etc/shells"
+  become: yes
 
 - name: Current shell
   shell: echo $SHELL
