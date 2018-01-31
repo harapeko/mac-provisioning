@@ -28,4 +28,4 @@
     creates: ~/.config/fisherman/default
 
 - name: Install plugins by fisherman
-  shell: fish -lc "fisher fnm z fzf bd ghq"
+  shell: fish -lc "fisher fnm z fzf 0rax/fish-bd decors/fish-ghq"

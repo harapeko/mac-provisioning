@@ -4,7 +4,6 @@ homebrew_cask_packages:
   - google-chrome
 
   # Develop
-  - adobe-creative-cloud
   - android-studio
   - atom
   - boostnote
@@ -37,7 +36,6 @@ homebrew_cask_packages:
   - google-japanese-ime
   - gyazo
   - ios-console
-  - microsoft-office
   - shiftit
   - wireshark
 

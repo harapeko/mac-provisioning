@@ -38,6 +38,7 @@ $ ln -s ~/gd/settings/ssh ~/.ssh
 
 #### filezilla
 ```bash
+$ mkdir -p ~/.config/filezilla
 $ ln -s ~/gd/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
 ```
 
@@ -45,7 +46,11 @@ $ ln -s ~/gd/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.
 ##### fish
 ```bash
 $ ln -s ~/gd/settings/shell/config.fish ~/.config/fish/config.fish
+$ set -g theme_display_date no
+$ ghq get powerline/fonts
+$ ~/.ghq/github.com/powerline/fonts/install.sh
 ```
+`Source Code Pro for Powerline` フォントをiTerm2、VSCodeなどに登録する
 
 ##### bash(deprecated)
 ```bash
@@ -89,3 +94,22 @@ $ ln -s ~/gd/settings/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/P
 
 #### atom
 同期設定する
+
+#### adobe
+adobeのサイトにログインしてインストーラーを取得する
+
+#### office 365
+officeのサイトにログインしてインストーラーを取得する
+
+#### alfred
+`Preferences` → `advanced` → 右下のSet Sync folderで<br>
+`~/gd/settings/alfred/` を選択する
+
+#### Boostnote
+設定から`~/gd/settings/boostnote`を追加する
+
+#### メール
+`~/Library/Mail/V5/MailData`
+`~/Library/Containers/com.apple.mail`
+を上書きコピペする
+アカウントは再ログインする
