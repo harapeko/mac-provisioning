@@ -113,3 +113,19 @@ officeのサイトにログインしてインストーラーを取得する
 `~/Library/Containers/com.apple.mail`
 を上書きコピペする
 アカウントは再ログインする
+
+
+#### VSCode
+プラグインをいれてgistで管理する
+[Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+`sync download`からシークレットキー、gist idを入力する
+`sync auto download`もトグルオンにしておく
+
+※シークレットキーは再発行で
+https://github.com/settings/tokens
+
+#### Atom
+setting-syncをいれる
+設定からシークレットキー、gist idを入力する
+sync backupするだけ
+※シークレットキーは丸裸で確認できる
