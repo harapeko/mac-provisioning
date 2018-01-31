@@ -43,3 +43,6 @@ homebrew_cask_packages:
   - qlimagesize
   - quicklook-csv
   - quicklook-json
+
+# mac
+  - bettertouchtool
