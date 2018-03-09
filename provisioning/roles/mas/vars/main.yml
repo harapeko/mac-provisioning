@@ -8,3 +8,4 @@ mas_applications:
   - { name: 'LastPass',                 id: 926036361}
   - { name: 'Microsoft Remote Desktop', id: 715768417}
   - { name: 'The Unarchiver',           id: 425424353}
+  - { name: 'Xcode',                    id: 497799835}
