@@ -77,7 +77,7 @@ $ ln -s ~/gd/settings/git/.gitconfig ~/.gitconfig
 
 #### subl3
 ```bash
-$ ln -s ~/gd/settings/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+$ ln -s ~/gd/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 ```
 
 #### dash
