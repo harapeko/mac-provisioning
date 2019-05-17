@@ -92,15 +92,6 @@ $ ln -s ~/gd/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ Tex
 `cmd + ,` → 左下の歯車アイコン → 読み込む →
 `~/gd/settings/terminal/Solarized Light.terminal`
 
-#### atom
-同期設定する
-
-#### adobe
-adobeのサイトにログインしてインストーラーを取得する
-
-#### office 365
-officeのサイトにログインしてインストーラーを取得する
-
 #### alfred
 `Preferences` → `advanced` → 右下のSet Sync folderで<br>
 `~/gd/settings/alfred/` を選択する
@@ -108,12 +99,17 @@ officeのサイトにログインしてインストーラーを取得する
 #### Boostnote
 設定から`~/gd/settings/boostnote`を追加する
 
-#### メール
+#### メール(これなんでだっけ？)
 `~/Library/Mail/V5/MailData`
 `~/Library/Containers/com.apple.mail`
 を上書きコピペする
 アカウントは再ログインする
 
+#### adobe
+adobeのサイトにログインしてインストーラーを取得する
+
+#### office 365
+officeのサイトにログインしてインストーラーを取得する
 
 #### VSCode
 プラグインをいれてgistで管理する
