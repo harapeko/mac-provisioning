@@ -1,6 +1,9 @@
 homebrew_packages:
+  - n
   - fish
   - fzf
+  # fisher add franciscolourenco/doneのために
+  - terminal-notifier
   - ghq
   - git
   - go
@@ -12,3 +15,13 @@ homebrew_packages:
   - tree
   - wget
   - yarn
+
+n_setting:
+  - name: n setting
+    # make cache folder (if missing) and take ownership
+    shell: sudo mkdir -p /usr/local/n
+    shell: sudo chown -R $(whoami) /usr/local/n
+    # take ownership of node install destination folders
+    shell: sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
+    # install lts node
+    shell: n lts

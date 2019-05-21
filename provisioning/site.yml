@@ -4,10 +4,10 @@
   become: false
   roles:
     # App Install
-    - homebrew
-    - homebrew-cask
-    - mas
+    # - homebrew
+    # - homebrew-cask
+    # - mas
 
-    # Configurations
-    - osx-defaults
+    # # Configurations
+    # - osx-defaults
     - fish
