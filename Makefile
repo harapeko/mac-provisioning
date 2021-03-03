@@ -8,10 +8,10 @@ all: setup provisioning
 .PHONY: setup
 setup:
 	@$(SCRIPT_DIR)/XcodeInstall.sh
-	@$(SCRIPT_DIR)/AnsibleInstall.sh
-	@$(SCRIPT_DIR)/PipUpdate.sh
+# 	@$(SCRIPT_DIR)/AnsibleInstall.sh
+# 	@$(SCRIPT_DIR)/PipUpdate.sh
 
 .PHONY: provisioning
 provisioning:
-	@$(SCRIPT_DIR)/AnsiblePlay.sh
-	@$(SCRIPT_DIR)/NotifyFinished.sh
+# 	@$(SCRIPT_DIR)/AnsiblePlay.sh
+# 	@$(SCRIPT_DIR)/NotifyFinished.sh

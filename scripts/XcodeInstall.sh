@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xcodebuild -version > /dev/null 2>&1
+xcode-select -v > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
 	echo "[already Xcode]"
