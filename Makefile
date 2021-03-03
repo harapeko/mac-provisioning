@@ -8,6 +8,7 @@ all: setup provisioning
 .PHONY: setup
 setup:
 	@$(SCRIPT_DIR)/XcodeInstall.sh
+	@$(SCRIPT_DIR)/HomebrewInstall.sh
 # 	@$(SCRIPT_DIR)/AnsibleInstall.sh
 # 	@$(SCRIPT_DIR)/PipUpdate.sh
 
