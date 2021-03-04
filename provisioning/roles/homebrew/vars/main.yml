@@ -12,11 +12,10 @@ homebrew_packages:
   # commands
   - awscli
   - exercism
-  # - heroku cask?
+  - heroku
   - httpie
   - hugo
   - mas
-  # - ngrok cask?
   - tree
   - wget
 
