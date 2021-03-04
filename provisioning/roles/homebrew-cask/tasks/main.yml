@@ -1,23 +1,10 @@
 ---
-- name: Tap homebrew caskroom/cask
-  homebrew_tap:
-    tap: "caskroom/cask"
+- name: Install casks
+  community.general.homebrew_cask:
+    name: "{{ homebrew_cask_packages }}"
     state: present
-  become: false
+    install_options: 'appdir=/Applications'
 
-- name: Update homebrew itself first
-  homebrew:
-    state: latest
-    update_homebrew: yes
-  become: false
-
-- name: Install and upgrade homebrew cask packages
-  homebrew_cask:
-    name: "{{ item }}"
-    state: present
-  # GUIのインストール場所を/Applicationsにする
-  environment:
-    HOMEBREW_CASK_OPTS: "--appdir=/Applications"
-  with_items: "{{ homebrew_cask_packages }}"
-  when: homebrew_cask_packages
-  become: false
+- name: Upgrade all casks
+  community.general.homebrew_cask:
+    upgrade_all: true
