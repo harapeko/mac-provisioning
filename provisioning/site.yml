@@ -4,7 +4,7 @@
   become: false
   roles:
     # App Install
-    # - homebrew
+     - homebrew
     # - homebrew-cask
     # - mas
 
