@@ -3,11 +3,11 @@
 brew -v > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
-	echo "[already Homebrew]"
+  echo "[already Homebrew]"
 else
-	echo "[install Homebrew]"
-	arch -arm64e /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "[install Homebrew]"
+  arch -arm64e /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/harapeko/.zprofile
   zsh
-	echo "[installed Homebrew]"
+  echo "[installed Homebrew]"
 fi

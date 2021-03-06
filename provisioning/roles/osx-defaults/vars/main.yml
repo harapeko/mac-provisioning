@@ -27,6 +27,7 @@ localized_files:
   - /Library/.localized
   - /Library/Compositions/.localized
   - /private/var/root/Library/.localized
+  # failed
   # - /System/.localized
   # - /System/Applications/.localized
   # - /System/Library/.localized
@@ -106,7 +107,7 @@ osx_settings:
 
   # TrackPad
   - {                                                    key: com.apple.swipescrolldirection, type: bool,  value: false } # ナチュラル スクローリングを無効にする
-  - { domain: com.apple.trackpad,                        key: scaling,                        type: float, value: 40    } # トラックパッドを速くする
+  - { domain: com.apple.trackpad,                        key: scaling,                        type: float, value: 50    } # トラックパッドを速くする
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(本体用)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch, key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(Bluetooth接続機器用)
 

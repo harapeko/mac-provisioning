@@ -4,6 +4,5 @@
     killall SystemUIServer
     killall Dock
     killall Finder
-
     exit 0
   changed_when: false

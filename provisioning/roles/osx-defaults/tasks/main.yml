@@ -10,7 +10,7 @@
   become: true
   changed_when: false
 
-- name: Delete .localized
+- name: Remove file (delete file)
   ansible.builtin.file:
     path: "{{ item }}"
     state: absent
