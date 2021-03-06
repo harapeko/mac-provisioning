@@ -8,6 +8,8 @@ homebrew_packages:
   - tmux
   - zsh
   - zsh-completions
+  - terminal-notifier # for franciscolourenco/done
+  - starship
 
   # commands
   - awscli
@@ -18,6 +20,8 @@ homebrew_packages:
   - mas
   - tree
   - wget
+  - fd  # Simple, fast and user-friendly alternative to find
+  - exa # modern replacement for ls
 
   # GNU commands
   - grep
@@ -35,6 +39,6 @@ homebrew_packages:
   - rbenv
   - ruby-build
   - rust-analyzer
-  - rustup-init
+  - rustup
   - sqlite
   - yarn

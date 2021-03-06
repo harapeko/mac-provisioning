@@ -1,31 +1,43 @@
 ---
-- name: Ensure candiate shell for fish
-  shell: sh -c "echo '/usr/local/bin/fish' >> /etc/shells"
+- name: Register fish shell path
+  ansible.builtin.command: which fish
+  register: fish_path
+
+- name: Register zsh shell path
+  ansible.builtin.command: which zsh
+  register: zsh_path
+
+- name: Ensure candiate shell for fish, zsh
+  ansible.builtin.lineinfile:
+    path: /etc/shells
+    line: "{{ item }}"
+  loop:
+    - "{{ fish_path.stdout }}"
+    - "{{ zsh_path.stdout }}"
   become: yes
 
-- name: Current shell
-  shell: echo $SHELL
-  register: current_shell
-  changed_when: false
+- name: Set fish to Login shell
+  ansible.builtin.command: chsh -s "{{ fish_path.stdout }}"
+  become: yes
 
-- name: Login shell fish
-  shell: chsh -s /usr/local/bin/fish
-  when: current_shell != '/usr/local/bin/fish'
-
-- name: Create ~/.config/fish/functions for install fisherman
-  file:
+- name: Create directory for fisherman
+  ansible.builtin.file:
     path: ~/.config/fish/functions
     state: directory
 
 - name: Install fisherman
-  get_url:
+  ansible.builtin.get_url:
     url: https://git.io/fisher
     dest: ~/.config/fish/functions/fisher.fish
 
-- name: Install theme(bobthefish) by fisherman
-  shell: fish -lc "fisher add oh-my-fish/theme-bobthefish"
-  args:
-    creates: ~/.config/fisherman/default
-
 - name: Install plugins by fisherman
-  shell: fish -lc "fisher add decors/fish-ghq jethrokuan/fzf jethrokuan/z oh-my-fish theme-bobthefish franciscolourenco/done"
+  ansible.builtin.command: fish -lc "fisher install decors/fish-ghq jethrokuan/fzf jethrokuan/z franciscolourenco/done"
+
+- name: Apply starship
+  ansible.builtin.lineinfile:
+    path: ~/.config/fish/config.fish
+    line: "{{ item }}"
+    create: true
+  loop:
+    - set -x PATH /opt/homebrew/bin $PATH
+    - starship init fish | source
