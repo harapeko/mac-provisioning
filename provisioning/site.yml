@@ -8,6 +8,6 @@
     - homebrew-cask
     - mas
 
-    # # Configurations
-    # - osx-defaults
+    # Configurations
+    - osx-defaults
     # - fish

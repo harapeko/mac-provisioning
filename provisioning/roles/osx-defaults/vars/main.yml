@@ -1,206 +1,128 @@
-# SEE: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html
+# SEE: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/defaults.1.html (404)
+#      https://ss64.com/osx/syntax-defaults.html
+#      https://github.com/lafarer/ansible-role-osx-defaults
+#      http://www.neko.ne.jp/~freewing/software/macos_mojave_speed_up_setting_tips/
+
+create_dirs:
+  - ScreenShots
+  - hobby
+
+dns_server:
+  # Block malware
+  # - 2606:4700:4700::1112
+  # - 2606:4700:4700::1002
+  # - 1.1.1.2
+  # - 1.0.0.2
+  #
+  # Block malware and adult content
+  - 2606:4700:4700::1113
+  - 2606:4700:4700::1003
+  - 1.1.1.3
+  - 1.0.0.3
+
+# via: https://github.com/dai0304/macos-setup/blob/72bc45b334bb79539db4f97833066c718e3e4da5/roles/system_preferences/tasks/main.yml#L92
+localized_files:
+  - /Applications/.localized
+  - /Applications/Utilities/.localized
+  - /Library/.localized
+  - /Library/Compositions/.localized
+  - /private/var/root/Library/.localized
+  # - /System/.localized
+  # - /System/Applications/.localized
+  # - /System/Library/.localized
+  # - /System/Library/Compositions/.localized
+  - /Users/.localized
+  - /Users/.localized
+  - /Users/{{ ansible_user_id }}/Applications/.localized
+  - /Users/{{ ansible_user_id }}/Desktop/.localized
+  - /Users/{{ ansible_user_id }}/Documents/.localized
+  - /Users/{{ ansible_user_id }}/Downloads/.localized
+  - /Users/{{ ansible_user_id }}/Library/.localized
+  - /Users/{{ ansible_user_id }}/Library/Compositions/.localized
+  - /Users/{{ ansible_user_id }}/Library/Favorites/.localized
+  - /Users/{{ ansible_user_id }}/Library/Input Methods/.localized
+  - /Users/{{ ansible_user_id }}/Movies/.localized
+  - /Users/{{ ansible_user_id }}/Music/.localized
+  - /Users/{{ ansible_user_id }}/Pictures/.localized
+  - /Users/{{ ansible_user_id }}/Public/.localized
+  - /Users/{{ ansible_user_id }}/Public/Drop Box/.localized
+  - /Users/Guest/Desktop/.localized
+  - /Users/Guest/Documents/.localized
+  - /Users/Guest/Downloads/.localized
+  - /Users/Guest/Library/.localized
+  - /Users/Guest/Library/Compositions/.localized
+  - /Users/Guest/Library/Favorites/.localized
+  - /Users/Guest/Library/Input Methods/.localized
+  - /Users/Guest/Movies/.localized
+  - /Users/Guest/Music/.localized
+  - /Users/Guest/Pictures/.localized
+  - /Users/Guest/Public/.localized
+  - /Users/Guest/Public/Drop Box/.localized
+  - /Users/Shared/.localized
 
 osx_settings:
   # Finder
-  ## ファイルの拡張子を表示する
-  - {
-    domain: NSGlobalDomain,
-    key: AppleShowAllExtensions,
-    type: bool,
-    value: true,
-  }
-  ## 不可視ファイルを表示する
-  - {
-    domain: com.apple.finder,
-    key: AppleShowAllFiles,
-    type: bool,
-    value: true,
-  }
-  ## フォルダを開くときのアニメーションを無効にする
-  - {
-    domain: com.apple.finder,
-    key: AnimateWindowZoom,
-    type: bool,
-    value: false,
-  }
-  ## Finderのアニメーション効果を全て無効にする
-  - {
-    domain: com.apple.finder,
-    key: DisableAllAnimations,
-    type: bool,
-    value: true,
-  }
-  ## タイトルバーにフルパスを表示する
-  - {
-    domain: com.apple.finder,
-    key: _FXShowPosixPathInTitle,
-    type: bool,
-    value: true,
-  }
-  ## パスバーを表示する
-  - {
-    domain: com.apple.finder,
-    key: ShowPathbar,
-    type: bool,
-    value: true,
-  }
+  - {                           key: AppleShowAllExtensions,   type: bool,   value: true   } # ファイルの拡張子を表示する
+  - {                           key: QLPanelAnimationDuration, type: float,  value: 0      } # Quick Lookのアニメーションを無効にする
+  - { domain: com.apple.finder, key: AppleShowAllFiles,        type: bool,   value: true   } # 不可視ファイルを表示する
+  - { domain: com.apple.finder, key: AnimateWindowZoom,        type: bool,   value: false  } # フォルダを開くときのアニメーションを無効にする
+  - { domain: com.apple.finder, key: DisableAllAnimations,     type: bool,   value: true   } # Finderのアニメーション効果を全て無効にする
+  - { domain: com.apple.finder, key: _FXShowPosixPathInTitle,  type: bool,   value: true   } # タイトルバーにフルパスを表示する
+  - { domain: com.apple.finder, key: _FXSortFoldersFirst,      type: bool,   value: true   } # 名前並び替えでフォルダを先頭に配置する
+  - { domain: com.apple.finder, key: FXDefaultSearchScope,     type: string, value: "SCcf" } # デフォルトでカレンとディレクトリを検索する
+  - { domain: com.apple.finder, key: ShowPathbar,              type: bool,   value: true   } # パスバーを表示する
+  - { domain: com.apple.finder, key: WarnOnEmptyTrash,         type: bool,   value: false  } # ゴミ箱を空にする場合の警告を無効にする
+  - { domain: com.apple.finder, key: QuitMenuItem,             type: bool,   value: true   } # Finder終了項目を追加する
+  - { domain: com.apple.finder, key: ShowRecentTags,           type: bool,   value: false  } # 最近の項目を非表示にする
 
+  # Hide .DS_Store
+  - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: bool, value: true } # ネットワークフォルダ
+  - { domain: com.apple.desktopservices, key: DSDontWriteUSBStores,     type: bool, value: true } # USB
 
   # Dock
-  ## 左配置
-  - {
-    domain: com.apple.dock,
-    key: orientation,
-    type: string,
-    value: left,
-  }
-  ## アイコンズームON
-  - {
-    domain: com.apple.dock,
-    key: magnification,
-    type: bool,
-    value: true,
-  }
-  ## ズームエフェクト
-  - {
-    domain: com.apple.dock,
-    key: mineffect,
-    type: string,
-    value: scale,
-  }
-  ## Dockを自動的に隠す
-  - {
-    domain: com.apple.dock,
-    key: autohide,
-    type: bool,
-    value: true,
-  }
-  ## Dockを隠すときの時間を0にする
-  - {
-    domain: com.apple.dock,
-    key: autohide-delay,
-    type: float,
-    value: 0,
-  }
-  ## Dockを隠すときのアニメーションを設定する
-  - {
-    domain: com.apple.dock,
-    key: autohide-time-modifier,
-    type: float,
-    value: 0.25,
-  }
-  ## アイコン最大サイズ
-  - {
-    domain: com.apple.dock,
-    key: largesize,
-    type: int,
-    value: 60,
-  }
-  ## タイトルサイズ変更する
-  - {
-    domain: com.apple.dock,
-    key: tilesize,
-    type: float,
-    value: 45,
-  }
-
+  - { domain: com.apple.dock, key: orientation,            type: string, value: left  } # 左配置
+  - { domain: com.apple.dock, key: magnification,          type: bool,   value: true  } # アイコンズームON
+  - { domain: com.apple.dock, key: mineffect,              type: string, value: scale } # ズームエフェクト
+  - { domain: com.apple.dock, key: autohide,               type: bool,   value: true  } # Dockを自動的に隠す
+  - { domain: com.apple.dock, key: autohide-delay,         type: float,  value: 0     } # Dockを隠すときの時間を0にする
+  - { domain: com.apple.dock, key: autohide-time-modifier, type: float,  value: 0.25  } # Dockを隠すときのアニメーションを設定する
+  - { domain: com.apple.dock, key: largesize,              type: int,    value: 60    } # アイコン最大サイズ
+  - { domain: com.apple.dock, key: tilesize,               type: float,  value: 45    } # タイトルサイズ変更する
+  - { domain: com.apple.dock, key: launchanim,             type: bool,   value: false } # Dockからアプリ起動時のアニメーションを無効
 
   # ホットコーナー
   ## 右下：デスクトップ表示する
-  - {
-    domain: com.apple.dock,
-    key: wvous-br-corner,
-    type: int,
-    value: 4,
-  }
-  - {
-    domain: com.apple.dock,
-    key: wvous-br-modifier,
-    type: int,
-    value: 0,
-  }
+  - { domain: com.apple.dock, key: wvous-br-corner,   type: int, value: 4 }
+  - { domain: com.apple.dock, key: wvous-br-modifier, type: int, value: 0 }
   ## 左下：画面をロックする
-  - {
-    domain: com.apple.dock,
-    key: wvous-bl-corner,
-    type: int,
-    value: 5,
-  }
-  - {
-    domain: com.apple.dock,
-    key: wvous-bl-modifier,
-    type: int,
-    value: 0,
-  }
-
+  - { domain: com.apple.dock, key: wvous-bl-corner,   type: int, value: 5 }
+  - { domain: com.apple.dock, key: wvous-bl-modifier, type: int, value: 0 }
 
   # Key
-  ## Fnを標準のファンクションキーとして使用
-  - {
-    domain: 'Apple Global Domain',
-    key: com.apple.keyboard.fnState,
-    type: bool,
-    value: true,
-  }
-  ## KeyRepeatが始まるまでのディレイ
-  - {
-    domain: 'NSGlobalDomain',
-    key: InitialKeyRepeat,
-    type: int,
-    value: 11,
-  }
-  ## KeyRepeat中のディレイ
-  - {
-    domain: 'NSGlobalDomain',
-    key: KeyRepeat,
-    type: int,
-    value: 3,
-  }
-
+  - { key: KeyRepeat,                  type: int,  value: 4    } # KeyRepeat中のディレイ
+  - { key: InitialKeyRepeat,           type: int,  value: 12   } # KeyRepeatが始まるまでのディレイ
+  - { key: AppleKeyboardUIMode,        type: int,  value: 2    } # コントロール間のフォーカス移動をキーボードで操作可能にする
+  - { key: com.apple.keyboard.fnState, type: bool, value: true } # Fnを標準のファンクションキーとして使用
 
   # TrackPad
-  ## トラックパッドを速くする
-  - {
-    domain: 'com.apple.trackpad',
-    key: scaling,
-    type: float,
-    value: 3,
-  }
-  ## ナチュラル スクローリングを無効にする
-  - {
-    domain: 'NSGlobalDomain',
-    key: com.apple.swipescrolldirection,
-    type: bool,
-    value: false,
-  }
+  - {                                                    key: com.apple.swipescrolldirection, type: bool,  value: false } # ナチュラル スクローリングを無効にする
+  - { domain: com.apple.trackpad,                        key: scaling,                        type: float, value: 40    } # トラックパッドを速くする
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(本体用)
+  # - { domain: com.apple.driver.AppleBluetoothMultitouch, key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(Bluetooth接続機器用)
 
+  # Safari
+  - { domain: com.apple.Safari, key: ShowStatusBar,                                                             type: bool, value: true } # ステータスバー有効にする
+  - { domain: com.apple.Safari, key: IncludeDevelopMenu,                                                        type: bool, value: true } # devtools
+  - { domain: com.apple.Safari, key: IncludeInternalDebugMenu,                                                  type: bool, value: true } # devtools
+  - { domain: com.apple.Safari, key: WebKitDeveloperExtrasEnabledPreferenceKey,                                 type: bool, value: true } # devtools
+  - { domain: com.apple.Safari, key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled, type: bool, value: true } # devtools
 
   # Other
-  ## iPhoneを接続時に「写真」を自動起動させない
-  - {
-    domain: com.apple.ImageCapture,
-    key: disableHotPlug,
-    type: bool,
-    value: false,
-  }
-  ## バッテリー残量を%表示にする
-  - {
-    domain: 'com.apple.menuextra.battery',
-    key: ShowPercent,
-    type: string,
-    value: 'YES',
-  }
-  ## スクリーンショットの保存先を変更する
-  - {
-      domain: com.apple.screencapture,
-      key: location,
-      type: string,
-      value: '~/Documents/ScreenShots/',
-  }
-  ## スクリーンキャプチャでの影をオフにする
-  - {
-      domain: com.apple.screencapture,
-      key: disable-shadow,
-      type: bool,
-      value: true,
-  }
+  - { domain: com.apple.ImageCapture,      key: disableHotPlug,                     type: bool,   value: false                      } # iPhoneを接続時に「写真」を自動起動させない
+  - { domain: com.apple.menuextra.battery, key: ShowPercent,                        type: string, value: 'YES'                      } # バッテリー残量を%表示にする
+  - { domain: com.apple.menuextra.clock,   key: DateFormat,                         type: string, value: 'EEE d MMM HH:mm'          } # x月x日(x) xx:xx表記にする
+  - { domain: com.apple.screencapture,     key: location,                           type: string, value: '~/Documents/ScreenShots/' } # スクリーンショットの保存先を変更する
+  - { domain: com.apple.screencapture,     key: disable-shadow,                     type: bool,   value: true                       } # スクリーンキャプチャでの影を無効にする
+  - { domain: com.apple.Safari,            key: LSQuarantine,                       type: bool,   value: false                      } # 未確認アプリを開くときの警告を無効にする
+  - {                                      key: NSAutomaticWindowAnimationsEnabled, type: bool,   value: false                      } # ウィンドウ開閉アニメーション無効にする
+  - {                                      key: NSWindowResizeTime,                 type: bool,   value: false                      } # ウィンドウサイズ調整アニメーション無効にする

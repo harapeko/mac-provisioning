@@ -1,16 +1,27 @@
 ---
-- name: Create a directory to save ScreenShots
-  file:
-    path: ~/Documents/ScreenShots
+- name: Create a directory if directory deos not exist
+  ansible.builtin.file:
+    path: "~/{{ item }}"
     state: directory
+  loop: "{{ create_dirs }}"
 
-- name: Setting OSX defaults
-  osx_defaults:
-    domain: "{{ item.domain }}"
+- name: Set DNS Server
+  ansible.builtin.command: "networksetup -setdnsservers Wi-Fi {{ dns_server | join(' ') }}"
+  become: true
+  changed_when: false
+
+- name: Delete .localized
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  loop: "{{ localized_files }}"
+  become: true
+
+- name: Set OSX defaults
+  community.general.osx_defaults:
+    domain: "{{ item.domain | default(omit) }}"
     key: "{{ item.key }}"
     type: "{{ item.type }}"
     value: "{{ item.value }}"
-    array_add: "{{ item.array_add | default('false') }}"
-  with_items: "{{ osx_settings }}"
+  loop: "{{ osx_settings }}"
   notify: Apply setting
-  changed_when: true

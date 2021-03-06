@@ -9,15 +9,21 @@
 
 1. Apple ID for mas-cli.
 
-```bash
-$ cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
-$ vi provisioning/host_vars/localhost
+```zsh
+% cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
+% vi provisioning/host_vars/localhost
 ```
 
 2. Execute
 
-```bash
-$ make
+```zsh
+% make
+```
+
+3. Apply
+
+```zsh
+% sudo shutdown -r now
 ```
 
 ## Manual
@@ -32,30 +38,30 @@ $ make
 ### dotfiles(Google Backup Sync, Symbolic link)
 #### ssh
 filezillaのために本体は通常のディレクトリにしておく
-```bash
-$ ln -s ~/gd/settings/ssh ~/.ssh
+```zsh
+% ln -s ~/gd/settings/ssh ~/.ssh
 ```
 
-#### filezilla
-```bash
-$ mkdir -p ~/.config/filezilla
-$ ln -s ~/gd/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
+#### filezilla(deprecated)
+```zsh
+% mkdir -p ~/.config/filezilla
+% ln -s ~/gd/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
 ```
 
 #### shell
 ##### fish
-```bash
-$ ln -s ~/gd/settings/shell/config.fish ~/.config/fish/config.fish
-$ set -g theme_display_date no
-$ ghq get powerline/fonts
-$ ~/.ghq/github.com/powerline/fonts/install.sh
+```zsh
+% ln -s ~/gd/settings/shell/config.fish ~/.config/fish/config.fish
+% set -g theme_display_date no
+% ghq get powerline/fonts
+% ~/.ghq/github.com/powerline/fonts/install.sh
 ```
 `Source Code Pro for Powerline` フォントをiTerm2、VSCodeなどに登録する
 
 ##### bash(deprecated)
-```bash
-$ ln -s ~/gd/settings/shell/.bash_profile ~/.bash_profile
-$ ln -s ~/gd/settings/shell/.bashrc ~/.bashrc
+```zsh
+% ln -s ~/gd/settings/shell/.bash_profile ~/.bash_profile
+% ln -s ~/gd/settings/shell/.bashrc ~/.bashrc
 ```
 
 ##### zsh(deprecated)
@@ -108,9 +114,6 @@ $ ln -s ~/gd/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ Tex
 #### adobe
 adobeのサイトにログインしてインストーラーを取得する
 
-#### office 365
-officeのサイトにログインしてインストーラーを取得する
-
 #### VSCode
 プラグインをいれてgistで管理する
 [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
@@ -120,7 +123,7 @@ officeのサイトにログインしてインストーラーを取得する
 ※シークレットキーは再発行で
 https://github.com/settings/tokens
 
-#### Atom
+#### Atom(deprecated)
 setting-syncをいれる
 設定からシークレットキー、gist idを入力する
 sync backupするだけ

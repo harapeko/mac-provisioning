@@ -1,6 +1,9 @@
 ---
-- name: Apply setting 
-  shell: >
-    killall SystemUIServer;
-    killall Dock;
-    killall Finder;
+- name: Apply setting
+  ansible.builtin.shell: |
+    killall SystemUIServer
+    killall Dock
+    killall Finder
+
+    exit 0
+  changed_when: false
