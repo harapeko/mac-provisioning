@@ -1,11 +1,12 @@
 mas_applications:
-  - { name: 'EdgeView 2',               id: 1206246482}
-  - { name: 'GPX Binder',               id: 661532686}
-  - { name: 'Growl',                    id: 467939042}
-  - { name: 'JPEGmini',                 id: 498944723}
-  - { name: 'Kobito',                   id: 896624060}
-  - { name: 'LanScan',                  id: 472226235}
-  - { name: 'LastPass',                 id: 926036361}
-  - { name: 'Microsoft Remote Desktop', id: 715768417}
-  - { name: 'The Unarchiver',           id: 425424353}
-  - { name: 'Xcode',                    id: 497799835}
+  # - 1206246482 # EdgeView 2
+  - 661532686  # GPX Binder
+  - 498944723  # JPEGmini
+  - 562184107  # LanScan
+  - 715768417  # Microsoft Remote Desktop
+  - 425424353  # The Unarchiver
+  - 497799835  # Xcode
+  - 1429033973 # RunCat
+  - 1258530160 # Focus To-Do
+  - 485812721  # TweetDeck
+  - 539883307  # LINE

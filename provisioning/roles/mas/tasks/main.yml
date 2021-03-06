@@ -1,20 +1,14 @@
 ---
-- name: Ensure MAS is installed.
-  homebrew:
-    name: mas
-    state: present
-
-- name: Ensure logout mas
-  shell: mas signout
-
-- name: Login mas
-  shell: mas signin --dialog "{{ apple_id }}"
-  ignore_errors: yes
-
-- name: Install AppStore applications
-  shell: mas install "{{ item.id }}"
-  with_items: "{{ mas_applications }}"
-  run_once: true
+- name: Ensure the latest Keynote version is installed
+  community.general.mas:
+    id: "{{ mas_applications }}"
+    state: latest
 
 - name: Upgrade applications
-  shell: mas upgrade
+  ansible.builtin.command: xcodebuild -license accept
+  become: yes
+  changed_when: false
+
+- name: Upgrade all installed Mac App Store apps
+  community.general.mas:
+    upgrade_all: yes
