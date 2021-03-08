@@ -41,3 +41,6 @@
   loop:
     - set -x PATH /opt/homebrew/bin $PATH
     - starship init fish | source
+
+- name: change to fish shell
+  ansible.builtin.command: "{{ fish_path.stdout }}"
