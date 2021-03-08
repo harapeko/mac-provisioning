@@ -44,3 +44,9 @@
 
 - name: change to fish shell
   ansible.builtin.command: "{{ fish_path.stdout }}"
+
+- name: get powerline
+  ansible.builtin.command: ghq get powerline/fonts
+
+- name: install powerline
+  ansible.builtin.command: ~/ghq/github.com/powerline/fonts/install.sh

@@ -53,8 +53,6 @@ filezillaのために本体は通常のディレクトリにしておく
 ```zsh
 % ln -s ~/gdev/settings/shell/config.fish ~/.config/fish/config.fish
 % set -g theme_display_date no
-% ghq get powerline/fonts
-% ~/.ghq/github.com/powerline/fonts/install.sh
 ```
 `Source Code Pro for Powerline` フォントをiTerm2、VSCodeなどに登録する
 
