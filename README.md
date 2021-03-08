@@ -39,19 +39,19 @@
 #### ssh
 filezillaのために本体は通常のディレクトリにしておく
 ```zsh
-% ln -s ~/gd/settings/ssh ~/.ssh
+% ln -s ~/gdev/settings/ssh ~/.ssh
 ```
 
 #### filezilla(deprecated)
 ```zsh
 % mkdir -p ~/.config/filezilla
-% ln -s ~/gd/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
+% ln -s ~/gdev/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
 ```
 
 #### shell
 ##### fish
 ```zsh
-% ln -s ~/gd/settings/shell/config.fish ~/.config/fish/config.fish
+% ln -s ~/gdev/settings/shell/config.fish ~/.config/fish/config.fish
 % set -g theme_display_date no
 % ghq get powerline/fonts
 % ~/.ghq/github.com/powerline/fonts/install.sh
@@ -60,50 +60,50 @@ filezillaのために本体は通常のディレクトリにしておく
 
 ##### bash(deprecated)
 ```zsh
-% ln -s ~/gd/settings/shell/.bash_profile ~/.bash_profile
-% ln -s ~/gd/settings/shell/.bashrc ~/.bashrc
+% ln -s ~/gdev/settings/shell/.bash_profile ~/.bash_profile
+% ln -s ~/gdev/settings/shell/.bashrc ~/.bashrc
 ```
 
 ##### zsh(deprecated)
 ```bash
-$ ln -s ~/gd/settings/shell/.zshrc ~/.zshrc
+$ ln -s ~/gdev/settings/shell/.zshrc ~/.zshrc
 ```
 
 #### hosts
 ```bash
-$ ln -s ~/gd/settings/hosts /etc/hosts
+$ ln -s ~/gdev/settings/hosts /etc/hosts
 ```
 
 #### git
 ```bash
-$ ln -s ~/gd/settings/git/.gitmessage ~/.gitmessage
-$ ln -s ~/gd/settings/git/.gitignore_global ~/.gitignore_global
-$ ln -s ~/gd/settings/git/.gitconfig ~/.gitconfig
+$ ln -s ~/gdev/settings/git/.gitmessage ~/.gitmessage
+$ ln -s ~/gdev/settings/git/.gitignore_global ~/.gitignore_global
+$ ln -s ~/gdev/settings/git/.gitconfig ~/.gitconfig
 ```
 
 #### subl3
 ```bash
-$ ln -s ~/gd/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+$ ln -s ~/gdev/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 ```
 
 #### dash
-`cmd + ,` → `General` → `Syncing` で `~/gd/settings/dash` を選択する
+`cmd + ,` → `General` → `Syncing` で `~/gdev/settings/dash` を選択する
 
 #### iTerm2
 `cmd + ,` → `General` → `Preferences` で<br>
 `Load preference from a custom folder or URL.` →<br>
- `~/gd/settings/iterm2` を選択する
+ `~/gdev/settings/iterm2` を選択する
 
 #### terminal
 `cmd + ,` → 左下の歯車アイコン → 読み込む →
-`~/gd/settings/terminal/Solarized Light.terminal`
+`~/gdev/settings/terminal/Solarized Light.terminal`
 
 #### alfred
 `Preferences` → `advanced` → 右下のSet Sync folderで<br>
-`~/gd/settings/alfred/` を選択する
+`~/gdev/settings/alfred/` を選択する
 
 #### Boostnote
-設定から`~/gd/settings/boostnote`を追加する
+設定から`~/gdev/settings/boostnote`を追加する
 
 #### メール(これなんでだっけ？)
 `~/Library/Mail/V5/MailData`
