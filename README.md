@@ -29,6 +29,9 @@
 ## Manual
 ### Screen Saver
 - <a href="http://nyancatsaves.com/" target="_blank">Nyan Cat Screen Saver for Mac OS X</a>
+- 開けないと言われたら
+- `open /Library/Screen\ Savers/`
+- `nyancat.saver` を右クリック⇨開く
 
 ### Track Pad Configuration
 - [ポイントとクリック](./manual/osx-defaults/01.png)
