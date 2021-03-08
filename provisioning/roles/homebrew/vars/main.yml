@@ -34,6 +34,7 @@ homebrew_packages:
   # language
   - deno
   - go
+  - ghq
   - n
   - node
   - rbenv
