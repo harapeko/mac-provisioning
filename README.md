@@ -37,12 +37,13 @@
 
 ### dotfiles(Google Backup Sync, Symbolic link)
 #### ssh
-filezillaのために本体は通常のディレクトリにしておく
+
 ```zsh
 % ln -s ~/gdev/settings/ssh ~/.ssh
 ```
 
 #### filezilla(deprecated)
+filezillaで不可視ディレクトリを見たい時は `cmd + .` を押す
 ```zsh
 % mkdir -p ~/.config/filezilla
 % ln -s ~/gdev/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
