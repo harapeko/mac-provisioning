@@ -31,8 +31,9 @@ homebrew_cask_packages:
 
   # Tool
   - alfred
-  - docker
-  - docker-toolbox
+  # dockerはまだM1がプレピュー版しかない
+  #- docker
+  #- docker-toolbox
   - dropbox
   - google-backup-and-sync
   - wireshark

@@ -35,8 +35,8 @@ homebrew_packages:
   - deno
   - go
   - ghq
-  - n
-  - node
+  - n # まだ上手くM1で動いていないかも
+  - node # m1では15系から
   - rbenv
   - ruby-build
   - rust-analyzer
