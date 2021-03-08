@@ -45,13 +45,6 @@
 % ln -s ~/gdev/settings/ssh ~/.ssh
 ```
 
-#### filezilla(deprecated)
-filezillaで不可視ディレクトリを見たい時は `cmd + .` を押す
-```zsh
-% mkdir -p ~/.config/filezilla
-% ln -s ~/gdev/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
-```
-
 #### shell
 ##### fish
 ```zsh
@@ -60,20 +53,9 @@ filezillaで不可視ディレクトリを見たい時は `cmd + .` を押す
 ```
 `Source Code Pro for Powerline` フォントをiTerm2、VSCodeなどに登録する
 
-##### bash(deprecated)
-```zsh
-% ln -s ~/gdev/settings/shell/.bash_profile ~/.bash_profile
-% ln -s ~/gdev/settings/shell/.bashrc ~/.bashrc
-```
-
-##### zsh(deprecated)
+##### zsh(見直す：たまにfishの記号が使いづらいから使うこともあるでしょう)
 ```bash
 $ ln -s ~/gdev/settings/shell/.zshrc ~/.zshrc
-```
-
-#### hosts
-```bash
-$ ln -s ~/gdev/settings/hosts /etc/hosts
 ```
 
 #### git
@@ -83,7 +65,7 @@ $ ln -s ~/gdev/settings/git/.gitignore_global ~/.gitignore_global
 $ ln -s ~/gdev/settings/git/.gitconfig ~/.gitconfig
 ```
 
-#### subl3
+#### subl3(見直すので保留)
 ```bash
 $ ln -s ~/gdev/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 ```
@@ -92,26 +74,22 @@ $ ln -s ~/gdev/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ T
 `cmd + ,` → `General` → `Syncing` で `~/gdev/settings/dash` を選択する
 
 #### iTerm2
-`cmd + ,` → `General` → `Preferences` で<br>
-`Load preference from a custom folder or URL.` →<br>
- `~/gdev/settings/iterm2` を選択する
+- `cmd + ,` → `General` → `Preferences` で
+- `Startup` タブで Window restoration policyがUse System Window Restoration Settingで使いたいならば、警告をクリックして、アプリケーションを閉じるときにウィンドウを閉じるのチェックを外す(趣味)
+-  `Preferences` タブで `Load preference from a custom folder or URL.`
+  - `~/gdev/settings/iterm2` を選択する
+  - Save changes を Automatically にする
 
 #### terminal
-`cmd + ,` → 左下の歯車アイコン → 読み込む →
+`cmd + ,` → プロファイル → 左下の歯車アイコン → 読み込む →
 `~/gdev/settings/terminal/Solarized Light.terminal`
 
 #### alfred
 `Preferences` → `advanced` → 右下のSet Sync folderで<br>
 `~/gdev/settings/alfred/` を選択する
 
-#### Boostnote
+#### Boostnote(nextが出てるらしいので確認する)
 設定から`~/gdev/settings/boostnote`を追加する
-
-#### メール(これなんでだっけ？)
-`~/Library/Mail/V5/MailData`
-`~/Library/Containers/com.apple.mail`
-を上書きコピペする
-アカウントは再ログインする
 
 #### adobe
 adobeのサイトにログインしてインストーラーを取得する
@@ -119,14 +97,40 @@ adobeのサイトにログインしてインストーラーを取得する
 #### VSCode
 プラグインをいれてgistで管理する
 [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
-`sync download`からシークレットキー、gist idを入力する
-`sync auto download`もトグルオンにしておく
+- `sync Advanced Options` → `LOGIN WITH GITHUB` をクリックして、ログインし、どのgistでsyncすると聞かれるので正しいものを選択する(一番上にきてると思う)
+- `EDIT CONFIRMATION` → 自動ダウンロード、自動アップロード、拡張機能の削除、拡張機能の同期にチェックする(Windowは縦長にしないと全部見えない)
 
-※シークレットキーは再発行で
-https://github.com/settings/tokens
+<details>
+<summary>deprecateds</summary>
+<div>
+##### bash(deprecated)
+```zsh
+% ln -s ~/gdev/settings/shell/.bash_profile ~/.bash_profile
+% ln -s ~/gdev/settings/shell/.bashrc ~/.bashrc
+```
+
+#### filezilla(deprecated: 一時期malware入ってたし、jetbrainsの方が高性能なので)
+filezillaで不可視ディレクトリを見たい時は `cmd + .` を押す
+```zsh
+% mkdir -p ~/.config/filezilla
+% ln -s ~/gdev/settings/filezilla/sitemanager.xml ~/.config/filezilla/sitemanager.xml
+```
+
+#### hosts(deprecated: 自宅と会社で完全に分けるし、今は特に使っていないので困らない)
+```bash
+$ ln -s ~/gdev/settings/hosts /etc/hosts
+```
+
+#### メール(これなんでだっけ？)
+`~/Library/Mail/V5/MailData`
+`~/Library/Containers/com.apple.mail`
+を上書きコピペする
+アカウントは再ログインする
 
 #### Atom(deprecated)
 setting-syncをいれる
 設定からシークレットキー、gist idを入力する
 sync backupするだけ
 ※シークレットキーは丸裸で確認できる
+</div>
+</details>
