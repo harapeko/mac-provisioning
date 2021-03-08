@@ -74,6 +74,7 @@ $ ln -s ~/gdev/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ T
 `cmd + ,` → `General` → `Syncing` で `~/gdev/settings/dash` を選択する
 
 #### iTerm2
+- 現在使っている端末のSettingをsync nowしてから行うと設定がしっかり同期される
 - `cmd + ,` → `General` → `Preferences` で
 - `Startup` タブで Window restoration policyがUse System Window Restoration Settingで使いたいならば、警告をクリックして、アプリケーションを閉じるときにウィンドウを閉じるのチェックを外す(趣味)
 -  `Preferences` タブで `Load preference from a custom folder or URL.`
@@ -99,6 +100,13 @@ adobeのサイトにログインしてインストーラーを取得する
 [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 - `sync Advanced Options` → `LOGIN WITH GITHUB` をクリックして、ログインし、どのgistでsyncすると聞かれるので正しいものを選択する(一番上にきてると思う)
 - `EDIT CONFIRMATION` → 自動ダウンロード、自動アップロード、拡張機能の削除、拡張機能の同期にチェックする(Windowは縦長にしないと全部見えない)
+
+#### Other
+##### キーボード
+- Touch Barに表示する項目：F1, F2などのキー
+- 地球儀キーを押して：音声入力
+- 押したままでControl Strip
+- 就職キー → Caps Lock アクションなし
 
 <details>
 <summary>deprecateds</summary>
