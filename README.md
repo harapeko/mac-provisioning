@@ -22,8 +22,9 @@
 
 3. Apply
 
-```zsh
-% sudo shutdown -r now
+```fish
+# 再起動しないと、キーボード設定などは反映されない
+$ sudo shutdown -r now
 ```
 
 ## Manual
@@ -33,7 +34,7 @@
 - `open /Library/Screen\ Savers/`
 - `nyancat.saver` を右クリック⇨開く
 
-### Track Pad Configuration
+### Track Pad Configuration(確認用)
 - [ポイントとクリック](./manual/osx-defaults/01.png)
 - [スクロールとズーム](./manual/osx-defaults/02.png)
 - [その他のジェスチャ](./manual/osx-defaults/03.png)
@@ -49,7 +50,6 @@
 ##### fish
 ```zsh
 % ln -s ~/gdev/settings/shell/config.fish ~/.config/fish/config.fish
-% set -g theme_display_date no
 ```
 `Source Code Pro for Powerline` フォントをiTerm2、VSCodeなどに登録する
 

@@ -110,6 +110,9 @@ osx_settings:
   - { domain: com.apple.trackpad,                        key: scaling,                        type: float, value: 50    } # トラックパッドを速くする
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(本体用)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch, key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(Bluetooth接続機器用)
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: Clicking,                       type: bool,  value: false } # タップでクリック無効(本体)
+  # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false } # タップでクリック無効(Bluetooth接続機器用)
+  # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false, host: currentHost } # タップでクリック無効(Bluetooth接続機器用:現ユーザー)
 
   # Safari
   - { domain: com.apple.Safari, key: ShowStatusBar,                                                             type: bool, value: true } # ステータスバー有効にする
