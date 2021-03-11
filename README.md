@@ -63,6 +63,7 @@ $ ln -s ~/gdev/settings/shell/.zshrc ~/.zshrc
 $ ln -s ~/gdev/settings/git/.gitmessage ~/.gitmessage
 $ ln -s ~/gdev/settings/git/.gitignore_global ~/.gitignore_global
 $ ln -s ~/gdev/settings/git/.gitconfig ~/.gitconfig
+# そのほか、ここにはかけないgit configがあればそちらも同期する
 ```
 
 #### subl3(見直すので保留)
