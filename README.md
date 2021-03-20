@@ -121,9 +121,12 @@ adobeのサイトにログインしてインストーラーを取得する
 - rectangle
 - pixel snap
 - clean shot x
+  - 保存場所をScreenShotsに
 - drop box
 - アクセシビリティ
   - ズーム機能。スクロールとジェスチャー
+- Finder
+  - サイドバーにhobby, ScreenShotsを追加する
 - キーボード
   - Touch Barに表示する項目：F1, F2などのキー
   - 地球儀キーを押して：音声入力

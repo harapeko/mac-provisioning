@@ -12,16 +12,17 @@
   when:
     - mas_account_result.rc == 1
 
-- name: Ensure the latest app version is installed
-  community.general.mas:
-    id: "{{ mas_applications }}"
-    state: latest
+# 現状、mas1.8.0で手動でやるのがよい
+#- name: Ensure the latest app version is installed
+#  community.general.mas:
+#    id: "{{ mas_applications }}"
+#    state: latest
 
 - name: xcodebuild -license accept
   ansible.builtin.command: xcodebuild -license accept
   become: yes
   changed_when: false
 
-- name: Upgrade all installed Mac App Store apps
-  community.general.mas:
-    upgrade_all: yes
+#- name: Upgrade all installed Mac App Store apps
+#  community.general.mas:
+#    upgrade_all: yes
