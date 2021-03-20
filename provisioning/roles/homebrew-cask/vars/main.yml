@@ -26,7 +26,7 @@ homebrew_cask_packages:
   - kindle
   - spotify
   - vlc
-  - guitar-pro
+  # - guitar-pro # M1未対応
   - soundflowerbed
 
   # Tool
@@ -36,7 +36,7 @@ homebrew_cask_packages:
   #- docker-toolbox
   - dropbox
   - google-backup-and-sync
-  - wireshark
+  #- wireshark # M1未対応
   - rectangle
   - cleanshot
   - deepl
@@ -45,7 +45,7 @@ homebrew_cask_packages:
   - transmission
   - pixelsnap
   - microsoft-office
-  - cloudflare-warp
+  #- cloudflare-warp # M1未対応
   - notion
 
   # Communication
@@ -62,10 +62,10 @@ homebrew_cask_packages:
   - qlimagesize
   - qlmarkdown
   - qlstephen
-  - qlvideo
+  #- qlvideo # M1未対応
   - quicklook-csv
   - quicklook-json
-  - quicklook-pat
+  #- quicklook-pat # M1未対応
   - quicklookapk
   - quicklookase
   - webpquicklook
