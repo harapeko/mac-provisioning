@@ -132,7 +132,7 @@ osx_settings:
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadFourFingerVertSwipeGesture,   type: int,  value: 2 } # expose 4本指有効
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerHorizSwipeGesture, type: int,  value: 0 } # フルスクリーンアプリケーション間をスワイプ 3本指無効
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadFourFingerHorizSwipeGesture,  type: int,  value: 2 } # フルスクリーンアプリケーション間をスワイプ 4本指有効
-  - { domain: com.apple.AppleMultitouchTrackpad,         key: Clicking,                       type: bool,  value: false } # タップでクリック無効(本体)
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: Clicking,                       type: int,  value: 0 } # タップでクリック無効(本体)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false } # タップでクリック無効(Bluetooth接続機器用)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false, host: currentHost } # タップでクリック無効(Bluetooth接続機器用:現ユーザー)
 
