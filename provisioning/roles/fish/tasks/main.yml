@@ -2,10 +2,12 @@
 - name: Register fish shell path
   ansible.builtin.command: which fish
   register: fish_path
+  changed_when: false
 
 - name: Register zsh shell path
   ansible.builtin.command: which zsh
   register: zsh_path
+  changed_when: false
 
 - name: Ensure candiate shell for fish, zsh
   ansible.builtin.lineinfile:
