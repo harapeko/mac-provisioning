@@ -2,7 +2,7 @@ homebrew_cask_packages:
   # Browsers
   - homebrew/cask-versions/firefox-developer-edition
   - google-chrome
-  - microsoft-edge
+#  - microsoft-edge # M1未対応
 
   # Develop
   - boost-note # next version
