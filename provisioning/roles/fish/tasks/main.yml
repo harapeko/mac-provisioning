@@ -17,7 +17,9 @@
   become: yes
 
 - name: Set fish to Login shell
-  ansible.builtin.command: chsh -s "{{ fish_path.stdout }}"
+  ansible.builtin.user:
+    name: "{{ ansible_env.USER }}"
+    shell: "{{ fish_path.stdout }}"
   become: yes
 
 - name: Create directory for fisherman
