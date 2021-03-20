@@ -10,6 +10,9 @@
 1. GUIでサインインする for mas-cli.
 Signin command disabled on macOS 10.13+
 https://github.com/mas-cli/mas/issues/164
+   
+2021/03/21現在mas1.8.0から1.8.1にあげるとエラーが発生する。
+なのでmas1.8.0で実行する必要がある
 
 ```zsh
 #% cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
@@ -89,8 +92,12 @@ $ ln -s ~/gdev/settings/subl3/Packages ~/Library/Application\ Support/Sublime\ T
 `~/gdev/settings/terminal/Solarized Light.terminal`
 
 #### alfred
+option ダブルタップに設定
+
 `Preferences` → `advanced` → 右下のSet Sync folderで<br>
 `~/gdev/settings/alfred/` を選択する
+
+clipboard機能有効。shortcutをcにする
 
 #### Boostnote(nextが出てるらしいので確認する)
 設定から`~/gdev/settings/boostnote`を追加する
@@ -105,11 +112,23 @@ adobeのサイトにログインしてインストーラーを取得する
 - `EDIT CONFIRMATION` → 自動ダウンロード、自動アップロード、拡張機能の削除、拡張機能の同期にチェックする(Windowは縦長にしないと全部見えない)
 
 #### Other
-##### キーボード
-- Touch Barに表示する項目：F1, F2などのキー
-- 地球儀キーを押して：音声入力
-- 押したままでControl Strip
-- 就職キー → Caps Lock アクションなし
+- chrome
+- 解像度最大
+- ATOK
+- MYKI
+- jetbrains
+  - `plugins: IDE Settings SYNC` をONにする
+- rectangle
+- pixel snap
+- clean shot x
+- drop box
+- アクセシビリティ
+  - ズーム機能。スクロールとジェスチャー
+- キーボード
+  - Touch Barに表示する項目：F1, F2などのキー
+  - 地球儀キーを押して：音声入力
+  - 押したままでControl Strip
+  - 就職キー → Caps Lock アクションなし
 
 <details>
 <summary>deprecateds</summary>
