@@ -24,4 +24,10 @@
     type: "{{ item.type }}"
     value: "{{ item.value }}"
   loop: "{{ osx_settings }}"
+
+# dictに対応していないので諦めてコマンドで
+# https://github.com/ansible-collections/community.general/blob/main/plugins/modules/system/osx_defaults.py#L373
+- name: Disable hotkeys
+  ansible.builtin.command: defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add {{ item.key }} "{ enabled = 0; value = { parameters = ({{ item.value }}); type = 'standard'; }; }"
+  loop: '{{ disable_hotkeys }}'
   notify: Apply setting

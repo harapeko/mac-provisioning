@@ -2,6 +2,7 @@
 #      https://ss64.com/osx/syntax-defaults.html
 #      https://github.com/lafarer/ansible-role-osx-defaults
 #      http://www.neko.ne.jp/~freewing/software/macos_mojave_speed_up_setting_tips/
+#      https://github.com/herrbischoff/awesome-macos-command-line
 
 create_dirs:
   - ScreenShots
@@ -92,6 +93,18 @@ osx_settings:
   - { domain: com.apple.dock, key: launchanim,             type: bool,   value: false } # Dockからアプリ起動時のアニメーションを無効
 
   # ホットコーナー
+  #  0: no-op
+  #  2: Mission Control
+  #  3: Show application windows
+  #  4: Desktop
+  #  5: Start screen saver
+  #  6: Disable screen saver
+  #  7: Dashboard
+  # 10: Put display to sleep
+  # 11: Launchpad
+  # 12: Notification Center
+  # 13: Lock Screen
+  # Top left screen corner → Mission Control
   ## 右下：デスクトップ表示する
   - { domain: com.apple.dock, key: wvous-br-corner,   type: int, value: 4 }
   - { domain: com.apple.dock, key: wvous-br-modifier, type: int, value: 0 }
@@ -105,14 +118,27 @@ osx_settings:
   - { key: AppleKeyboardUIMode,        type: int,  value: 2    } # コントロール間のフォーカス移動をキーボードで操作可能にする
   - { key: com.apple.keyboard.fnState, type: bool, value: true } # Fnを標準のファンクションキーとして使用
 
+  # Shortcuts
+  # via https://github.com/npearson72/dots/blob/dcc467d0f73c00b144c08ad7c3a9600849608351/ansible/roles/mac_os/tasks/keyboard.yml
+
+
   # TrackPad
   - {                                                    key: com.apple.swipescrolldirection, type: bool,  value: false } # ナチュラル スクローリングを無効にする
   - { domain: com.apple.trackpad,                        key: scaling,                        type: float, value: 50    } # トラックパッドを速くする
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(本体用)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch, key: TrackpadThreeFingerDrag,        type: bool,  value: true  } # 3本指ドラッグを有効にする(Bluetooth接続機器用)
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerTapGesture,        type: int,  value: 2 } # 調べる & データ検出を3本指にする
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerVertSwipeGesture,  type: int,  value: 0 } # expose 3本指無効
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadFourFingerVertSwipeGesture,   type: int,  value: 2 } # expose 4本指有効
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerHorizSwipeGesture, type: int,  value: 0 } # フルスクリーンアプリケーション間をスワイプ 3本指無効
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadFourFingerHorizSwipeGesture,  type: int,  value: 2 } # フルスクリーンアプリケーション間をスワイプ 4本指有効
   - { domain: com.apple.AppleMultitouchTrackpad,         key: Clicking,                       type: bool,  value: false } # タップでクリック無効(本体)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false } # タップでクリック無効(Bluetooth接続機器用)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false, host: currentHost } # タップでクリック無効(Bluetooth接続機器用:現ユーザー)
+
+  # Screen
+  - { domain: com.apple.screensaver, key: askForPassword,      type: int, value: 1 } # スクリーンセイバーでロックを
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: int, value: 5 } # 5秒後に
 
   # Safari
   - { domain: com.apple.Safari, key: ShowStatusBar,                                                             type: bool, value: true } # ステータスバー有効にする
@@ -130,3 +156,15 @@ osx_settings:
   - { domain: com.apple.Safari,            key: LSQuarantine,                       type: bool,   value: false                      } # 未確認アプリを開くときの警告を無効にする
   - {                                      key: NSAutomaticWindowAnimationsEnabled, type: bool,   value: false                      } # ウィンドウ開閉アニメーション無効にする
   - {                                      key: NSWindowResizeTime,                 type: bool,   value: false                      } # ウィンドウサイズ調整アニメーション無効にする
+
+disable_hotkeys:
+  # mission controls
+  32:  "65535, 126, 8650752"
+  33:  "65535, 125, 8650752"
+  34:  "65535, 126, 8781824"
+  35:  "65535, 125, 8781824"
+  79:  "65535, 123, 8650752"
+  80:  "65535, 123, 8781824"
+  81:  "65535, 124, 8650752"
+  82:  "65535, 124, 8781824"
+  118: "65535, 18,  262144"
