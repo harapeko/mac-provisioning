@@ -1,5 +1,18 @@
 ---
-- name: Ensure the latest Keynote version is installed
+- name: Get MAS account status
+  command: mas account
+  register: mas_account_result
+  failed_when: mas_account_result.rc > 1
+  check_mode: false
+  changed_when: false
+
+- name: Sign in to MAS when email and password are provided.
+  command: 'SEE https://github.com/mas-cli/mas/issues/164 GUIでサインインする'
+  register: mas_signin_result
+  when:
+    - mas_account_result.rc == 1
+
+- name: Ensure the latest app version is installed
   community.general.mas:
     id: "{{ mas_applications }}"
     state: latest

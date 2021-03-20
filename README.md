@@ -7,11 +7,13 @@
 
 ## Usage
 
-1. Apple ID for mas-cli.
+1. GUIでサインインする for mas-cli.
+Signin command disabled on macOS 10.13+
+https://github.com/mas-cli/mas/issues/164
 
 ```zsh
-% cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
-% vi provisioning/host_vars/localhost
+#% cp provisioning/host_vars/localhost.example provisioning/host_vars/localhost
+#% vi provisioning/host_vars/localhost
 ```
 
 2. Execute
