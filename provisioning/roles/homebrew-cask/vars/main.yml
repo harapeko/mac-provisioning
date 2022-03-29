@@ -2,56 +2,42 @@ homebrew_cask_packages:
   # Browsers
   - homebrew/cask-versions/firefox-developer-edition
   - google-chrome
-#  - microsoft-edge # M1未対応
+  - microsoft-edge
 
   # Develop
-  - boost-note # next version
   - dash
   - iterm2
-  - postico
-  - sequel-pro
   - tableplus
   - sublime-text
   - jetbrains-toolbox
   - visual-studio-code
   - ngrok
-  # - adobe-creative-cloud # M1まだない
-  - firebase-admin
-  # - google-cloud-sdk # M1まだない
   - postman
-  - responsively
-  - screaming-frog-seo-spider
 
   # Media
   - kindle
   - spotify
   - vlc
-  # - guitar-pro # M1未対応
-  - soundflowerbed
+  - guitar-pro
 
   # Tool
   - alfred
-  # dockerはまだM1がプレピュー版しかない
-  #- docker
-  #- docker-toolbox
+  - docker
   - dropbox
   - google-backup-and-sync
-  #- wireshark # M1未対応
+  - wireshark
   - rectangle
   - cleanshot
   - deepl
-  - lastpass
+  - bitwarden
   - sip
-  - transmission
   - pixelsnap
   - microsoft-office
-  #- cloudflare-warp # M1未対応
   - notion
 
   # Communication
   - discord
   - slack
-  - linear-linear
 
   # Quicklook
   # https://github.com/sindresorhus/quick-look-plugins
@@ -59,13 +45,11 @@ homebrew_cask_packages:
   - betterzip
   - provisionql
   - qlcolorcode
-  - qlimagesize
+  - qlimagesize mdimagesizemdimporter
   - qlmarkdown
   - qlstephen
-  #- qlvideo # M1未対応
+  - qlvideo
   - quicklook-csv
   - quicklook-json
-  #- quicklook-pat # M1未対応
   - quicklookapk
   - quicklookase
-  - webpquicklook

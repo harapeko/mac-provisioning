@@ -10,7 +10,7 @@
 1. GUIでサインインする for mas-cli.
 Signin command disabled on macOS 10.13+
 https://github.com/mas-cli/mas/issues/164
-   
+
 2021/03/21現在mas1.8.0から1.8.1にあげるとエラーが発生する。
 なのでmas1.8.0で実行する必要がある
 
