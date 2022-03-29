@@ -1,4 +1,11 @@
 ---
+# 2022/3/29 masを一度動かしたあと、手動で入れたので正しく動いていたか不明。
+# 後方で実行していたせいかもなので、冒頭に移動してきた。答え合わせはまたのセットアップの機会
+- name: xcodebuild -license accept
+  ansible.builtin.command: xcodebuild -license accept
+  become: yes
+  changed_when: false
+
 - name: Get MAS account status
   command: mas account
   register: mas_account_result
@@ -6,22 +13,17 @@
   check_mode: false
   changed_when: false
 
-- name: Sign in to MAS when email and password are provided.
-  command: 'SEE https://github.com/mas-cli/mas/issues/164 GUIでサインインする'
-  register: mas_signin_result
-  when:
-    - mas_account_result.rc == 1
+# 動作するようになったので、手動ログイン不要
+#- name: Sign in to MAS when email and password are provided.
+#  command: 'SEE https://github.com/mas-cli/mas/issues/164 GUIでサインインする'
+#  register: mas_signin_result
+#  when:
+#    - mas_account_result.rc == 1
 
-# 現状、mas1.8.0で手動でやるのがよい
-#- name: Ensure the latest app version is installed
-#  community.general.mas:
-#    id: "{{ mas_applications }}"
-#    state: latest
-
-- name: xcodebuild -license accept
-  ansible.builtin.command: xcodebuild -license accept
-  become: yes
-  changed_when: false
+- name: Ensure the latest app version is installed
+  community.general.mas:
+    id: "{{ mas_applications }}"
+    state: latest
 
 #- name: Upgrade all installed Mac App Store apps
 #  community.general.mas:
