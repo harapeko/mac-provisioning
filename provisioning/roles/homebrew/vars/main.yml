@@ -20,11 +20,9 @@ homebrew_packages:
   - mas
   - tree
   - wget
-  - fd  # Simple, fast and user-friendly alternative to find
-  - exa # modern replacement for ls
-
-  # GNU commands
-  - grep
+  - fd  # alter find
+  - exa # alter ls
+  - ripgrep # alter grep
 
   # git
   - git
@@ -35,11 +33,7 @@ homebrew_packages:
   - deno
   - go
   - ghq
-  - n # まだ上手くM1で動いていないかも
-  - node # m1では15系から
-  - rbenv
-  - ruby-build
-  - rust-analyzer
-  - rustup
+  - volta
+  - ruby
+  - python
   - sqlite
-  - yarn

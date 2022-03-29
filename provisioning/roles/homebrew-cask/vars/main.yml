@@ -18,7 +18,7 @@ homebrew_cask_packages:
   - kindle
   - spotify
   - vlc
-  - guitar-pro
+  #- guitar-pro
 
   # Tool
   - alfred
