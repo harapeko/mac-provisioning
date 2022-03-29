@@ -36,4 +36,5 @@ homebrew_packages:
   - volta
   - ruby
   - python
+  - php
   - sqlite

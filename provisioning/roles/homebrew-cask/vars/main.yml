@@ -34,6 +34,7 @@ homebrew_cask_packages:
   - pixelsnap
   - microsoft-office
   - notion
+  # - adobe-creative-cloud # M1未対応
 
   # Communication
   - discord
