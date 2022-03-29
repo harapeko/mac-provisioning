@@ -71,10 +71,9 @@ osx_settings:
   - { domain: com.apple.finder, key: DisableAllAnimations,     type: bool,   value: true   } # Finderのアニメーション効果を全て無効にする
   - { domain: com.apple.finder, key: _FXShowPosixPathInTitle,  type: bool,   value: true   } # タイトルバーにフルパスを表示する
   - { domain: com.apple.finder, key: _FXSortFoldersFirst,      type: bool,   value: true   } # 名前並び替えでフォルダを先頭に配置する
-  - { domain: com.apple.finder, key: FXDefaultSearchScope,     type: string, value: "SCcf" } # デフォルトでカレンとディレクトリを検索する
+  - { domain: com.apple.finder, key: FXDefaultSearchScope,     type: string, value: "SCcf" } # デフォルトでカレントディレクトリを検索する
   - { domain: com.apple.finder, key: ShowPathbar,              type: bool,   value: true   } # パスバーを表示する
   - { domain: com.apple.finder, key: WarnOnEmptyTrash,         type: bool,   value: false  } # ゴミ箱を空にする場合の警告を無効にする
-  - { domain: com.apple.finder, key: QuitMenuItem,             type: bool,   value: true   } # Finder終了項目を追加する
   - { domain: com.apple.finder, key: ShowRecentTags,           type: bool,   value: false  } # 最近の項目を非表示にする
 
   # Hide .DS_Store
@@ -105,16 +104,16 @@ osx_settings:
   # 12: Notification Center
   # 13: Lock Screen
   # Top left screen corner → Mission Control
-  ## 右下：デスクトップ表示する
-  - { domain: com.apple.dock, key: wvous-br-corner,   type: int, value: 4 }
-  - { domain: com.apple.dock, key: wvous-br-modifier, type: int, value: 0 }
+  ## 右上：デスクトップ表示する
+  - { domain: com.apple.dock, key: wvous-tr-corner,   type: int, value: 4 }
+  - { domain: com.apple.dock, key: wvous-tr-modifier, type: int, value: 0 }
   ## 左下：画面をロックする
   - { domain: com.apple.dock, key: wvous-bl-corner,   type: int, value: 5 }
   - { domain: com.apple.dock, key: wvous-bl-modifier, type: int, value: 0 }
 
   # Key
-  - { key: KeyRepeat,                  type: int,  value: 4    } # KeyRepeat中のディレイ
-  - { key: InitialKeyRepeat,           type: int,  value: 12   } # KeyRepeatが始まるまでのディレイ
+  - { key: KeyRepeat,                  type: int,  value: 2    } # KeyRepeat中のディレイ
+  - { key: InitialKeyRepeat,           type: int,  value: 15   } # KeyRepeatが始まるまでのディレイ
   - { key: AppleKeyboardUIMode,        type: int,  value: 2    } # コントロール間のフォーカス移動をキーボードで操作可能にする
   - { key: com.apple.keyboard.fnState, type: bool, value: true } # Fnを標準のファンクションキーとして使用
 
@@ -132,13 +131,13 @@ osx_settings:
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadFourFingerVertSwipeGesture,   type: int,  value: 2 } # expose 4本指有効
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadThreeFingerHorizSwipeGesture, type: int,  value: 0 } # フルスクリーンアプリケーション間をスワイプ 3本指無効
   - { domain: com.apple.AppleMultitouchTrackpad,         key: TrackpadFourFingerHorizSwipeGesture,  type: int,  value: 2 } # フルスクリーンアプリケーション間をスワイプ 4本指有効
-  - { domain: com.apple.AppleMultitouchTrackpad,         key: Clicking,                       type: int,  value: 0 } # タップでクリック無効(本体)
+  - { domain: com.apple.AppleMultitouchTrackpad,         key: Clicking,                             type: int,  value: 0 } # タップでクリック無効(本体)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false } # タップでクリック無効(Bluetooth接続機器用)
   # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking,                       type: bool,  value: false, host: currentHost } # タップでクリック無効(Bluetooth接続機器用:現ユーザー)
 
   # Screen
   - { domain: com.apple.screensaver, key: askForPassword,      type: int, value: 1 } # スクリーンセイバーでロックを
-  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: int, value: 5 } # 5秒後に
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: int, value: 5 } # 5秒後にする
 
   # Safari
   - { domain: com.apple.Safari, key: ShowStatusBar,                                                             type: bool, value: true } # ステータスバー有効にする
@@ -151,7 +150,7 @@ osx_settings:
   - { domain: com.apple.ImageCapture,      key: disableHotPlug,                     type: bool,   value: false                      } # iPhoneを接続時に「写真」を自動起動させない
   - { domain: com.apple.menuextra.battery, key: ShowPercent,                        type: string, value: 'YES'                      } # バッテリー残量を%表示にする
   - { domain: com.apple.menuextra.clock,   key: DateFormat,                         type: string, value: 'EEE d MMM HH:mm'          } # x月x日(x) xx:xx表記にする
-  - { domain: com.apple.screencapture,     key: location,                           type: string, value: '~/Documents/ScreenShots/' } # スクリーンショットの保存先を変更する
+  - { domain: com.apple.screencapture,     key: location,                           type: string, value: '~/ScreenShots/'           } # スクリーンショットの保存先を変更する
   - { domain: com.apple.screencapture,     key: disable-shadow,                     type: bool,   value: true                       } # スクリーンキャプチャでの影を無効にする
   - { domain: com.apple.Safari,            key: LSQuarantine,                       type: bool,   value: false                      } # 未確認アプリを開くときの警告を無効にする
   - {                                      key: NSAutomaticWindowAnimationsEnabled, type: bool,   value: false                      } # ウィンドウ開閉アニメーション無効にする
